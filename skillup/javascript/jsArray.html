@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo">creation array </p>
+    <p id="demo2">accesing array </p>
+    <p id="demo3">lenght of array </p>
+    <p id="demo4">accessing last array </p>
+    <div>
+        <h2> Array methods: </h2>
+        <p id="tostring"></p>
+        <p id="pop">remove last element</p>
+        <p id="push">add last element</p>
+        <p id="shift"> remove first element</p>
+        <p id="unshift">add first element</p>
+        <p id="concat">creating new array by concat method</p>
+        <p id="sort">sort an array by ascending order</p>
+        <p id="reverse">reverse an array by descending order</p>
+    </div>
+
+    <div>
+        <h2>Map.reducer,filter</h2>
+        <p id="map"></p>
+        <p id="filter"></p>
+    </div>
+    <script>
+        let cars = ['BMW', 'VOLVO', 'AUDI'];
+        document.getElementById("demo").innerHTML = cars;
+
+        let bmw = cars[0]
+        document.getElementById('demo2').innerHTML = bmw;
+        let len = cars.length;
+        document.getElementById('demo3').innerHTML = len;
+
+        let last = cars[cars.length - 1];
+        document.getElementById('demo4').innerHTML = last;
+// array methods
+    /*   1*/  document.getElementById('tostring').innerHTML = cars.toString();
+
+        /*   2*/  document.getElementById('pop').innerHTML = cars.pop();
+        let last2 = cars[cars.length - 1];
+        console.log(last2);
+
+        cars.push('honda');
+                /*   3*/  document.getElementById('push').innerHTML = cars
+        console.log(cars);
+
+        let bikes = ['yamaha', 'bajaj'];
+
+        let vehicles = cars.concat(bikes);
+ /*   6*/  document.getElementById('concat').innerHTML = vehicles;
+
+        vehicles.sort();
+  /*   7*/  document.getElementById('sort').innerHTML = vehicles;
+
+        vehicles.reverse();
+  /*   8*/  document.getElementById('reverse').innerHTML = vehicles;
+
+        //   map 
+        let num1 = [1, 2, 3, 4, 5, 6];
+
+        let num2 = num1.map(multiply);
+
+        function multiply(params) {
+            return params * 2;
+        }
+
+          /*   9*/  document.getElementById('map').innerHTML = num2;
+
+        //   filter()
+        let num3 = num2.filter(compare);
+
+        function compare(params) {
+            return params > 4;
+        }
+                  /*   10*/  document.getElementById('filter').innerHTML = num3;
+
+    </script>
+</body>
+
+</html>
